@@ -1,0 +1,11 @@
+{% load redux %}
+{% redux_get_state_json as state %}
+{% load static from staticfiles %}
+
+<span class="developer-cool"></span>
+<span class="developers-list"></span>
+
+<script type="text/javascript">
+  window.__INITIAL_STATE__ = {{ state|safe }};
+</script>
+<script src="{% static "app.js" %}"></script>
